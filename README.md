@@ -1,40 +1,11 @@
-# AngularPokemon
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-
-
-
 0. Installs
     Angular CLI command => npm install -g @angular/cli
     Extension: Angular Language Service by angular.io
 
 
 1. Create the project & File structure
+    ng new project-name
+
     app.component.css => the stylesheet for our component, we put css in this file
     app.component.html => the template for our component, we put html in this file
     app.component.spec.ts => the unit test file
@@ -47,7 +18,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 3. Components
-    ng generate component ./components/pokemon
+    ng generate component ./components/component-name
 
 4. Routing
     Angular has routing set up by default
@@ -58,9 +29,66 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
         },
 
 5. Services & Fetching
-6. Interfaces
+    ng generate service ./service/service.name
 
+6. Interfaces
+    ng generate interface ./interfaces/interface-name
 
 7. Passing data - Parent to child & Display fetched data
+
+
 8. Pipes 
+    Pipes are functions in angular that help with formatting displayed data
+    There are default pipes for upper casing and lower casing text, dates, currency, decimals and percentages
+    
+    You can also create custom pipes. Let's say you wanted to remove spaces and replace them with dashes -,
+    you can do that
+
+
 9. User input
+10. Two-way binding
+
+
+### Data binding
+Data binding is a way to connect properties from your class file, to your template file
+
++ Interpolation binding => {{ }}
+    To insert properties into a string or inside of an HTML tag
+    Example: <p>{{ property-name }}</p>
+    Link: https://angular.dev/guide/templates/interpolation
+
++ Property binding => []
+    To insert properties as values of properties, or attributes on an html tag
+    Example: <img [src]='property-name' alt='do not forget me' />
+
+    Can also be used to pass data from a parent component to a child component
+    Example: <component-selector-name [property-from-child]='property-from-parent'></component-selector-name>
+    Link: https://angular.dev/guide/templates/property-binding
+
++ Event binding => ()
+    Allows you to react to user interaction events like click
+    Example: <button (event-name)='function-name()'>Click me!</button>
+    Link: https://angular.dev/guide/templates/event-binding#binding-to-keyboard-events
+
++ Two-way binding => [()]
+    Allows you to pass data between components, from parent to child and back from child to parent
+    Example: <component-selector-name [(property-from-child)]='property-from-parent'></component-selector-name>
+    Link: https://angular.dev/guide/templates/two-way-binding
+
+
+
+### Useful links:
+
++ Angular CLI ⇒ https://angular.dev/tools/cli
+
++ Routing ⇒ https://angular.dev/guide/routing/common-router-tasks
+
++ `HttpClient` uses `XMLHttpRequest` API by default but can be set to use the `fetch` API ⇒ https://angular.dev/guide/http
+
++ `@Input` / `@Output` decorators; Passing data from Parent to Child, and vise versa  ⇒ https://angular.io/guide/inputs-outputs
+
++ `@for` control flow and `track` => https://angular.dev/guide/templates/control-flow
+
++ Pipes ⇒ https://angular.dev/guide/pipes#
+
++ Two-way binding ⇒ https://angular.dev/guide/templates/two-way-binding#
