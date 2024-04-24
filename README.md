@@ -29,6 +29,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 
+0. Installs
+    Angular CLI command => npm install -g @angular/cli
+    Extension: Angular Language Service by angular.io
+
 
 1. Create the project & File structure
     app.component.css => the stylesheet for our component, we put css in this file
@@ -46,8 +50,17 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     ng generate component ./components/pokemon
 
 4. Routing
+    Angular has routing set up by default
+    You set your routes inside of the routes array in the app.routes.ts file
+        { 
+            path: 'This is where you set the url route you want', 
+            component: This is where you put the component you want to load, when at that url route 
+        },
+
 5. Services & Fetching
 6. Interfaces
+
+
 7. Passing data - Parent to child & Display fetched data
 8. Pipes 
 9. User input
